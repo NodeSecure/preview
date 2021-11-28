@@ -1,29 +1,31 @@
 import type { NextPage } from 'next'
-import { useState } from 'react'
-// import Head from 'next/head'
-// import Image from 'next/image'
+import { useRouter } from 'next/dist/client/router';
+import { useEffect, useState } from 'react'
 
 import Layout from '../components/Layout';
 import Title from '../components/Title';
+import { getKey } from '../utils/ScannerStorage';
 
 /**
  * TODO: road to the V1
  * - add testing framework
  * - split component and add tests
  * - create ScannerStorage
- * - move on an ui branch and start design 
+ * - i18n
+ * - add types into API
  */
 
 const Home: NextPage = () => {
   const [pkgName, setPkgName] = useState("");
   const [scanPayload, setScanPayload] = useState(null);
   const [isLoading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleScan = async () => {
     setLoading(true);
 
     let analysis;
-    let maybeCached = window.localStorage.getItem(pkgName);
+    let maybeCached = window.localStorage.getItem(getKey(pkgName));
 
     if (maybeCached) {
       analysis = JSON.parse(maybeCached);
@@ -33,7 +35,7 @@ const Home: NextPage = () => {
       if (res.ok) {
         analysis = await res.json()
         
-        window.localStorage.setItem(pkgName, JSON.stringify(analysis));
+        window.localStorage.setItem(getKey(pkgName), JSON.stringify(analysis));
       } else {
         console.log({ status: res.status });
       }
@@ -45,6 +47,11 @@ const Home: NextPage = () => {
     }
   }
 
+  useEffect(() => {
+    if (scanPayload) {
+      router.push(`scan/${pkgName}`);
+    }
+  }, [scanPayload, router, pkgName])
 
   return (
     <Layout>
@@ -67,7 +74,7 @@ const Home: NextPage = () => {
             <button
               // disabled={pkgName.length < 1}
               onClick={handleScan}
-              className="px-8 py-2 md:h-14 bg-gradient-to-r from-purple-800 to-purple-500 rounded shadow-lg text-purple-100"
+              className="px-8 py-2 md:h-14 bg-gradient-to-r from-purple-600 to-purple-500 rounded shadow-lg text-purple-100"
             >Scan!</button>
           )}
         </div>
