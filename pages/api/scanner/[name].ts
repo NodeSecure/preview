@@ -20,11 +20,20 @@ export default async function handler(
   if (name) {
     const { id, dependencies  } = await from(name as string, { vulnerabilityStrategy: "npm" });
 
+    // FIXME: extract into a separate method
     const pkg = dependencies[name as string];
     const lastVersion = pkg.metadata.lastVersion;
     const flags = pkg[lastVersion].flags;
+    const size = pkg[lastVersion].size;
+    const dependencyCount = pkg.metadata.dependencyCount;
 
-    const payload = { version: lastVersion, flags, name: name as string, id };
+    const payload = {
+      version: lastVersion,
+      flags, name: name as string,
+      id,
+      dependencyCount,
+      size
+    };
     res.status(200).json(payload);
   } else {
     res.status(404).json({ error: "Impossible to scan this package!" })
