@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
+import Head from 'next/head'
 import { useEffect, useState } from "react";
 
 import Layout from "../../components/Layout";
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
   const router = useRouter()
   const { name } = router.query
   const [analysis, setAnalysis] = useState<any>(null);
+  const [scale, setScale] = useState<number>(0);
 
   useEffect(() => {
     if (typeof name === "string") {
@@ -18,21 +20,26 @@ const Home: NextPage = () => {
 
       if (maybeInStoreAnalysis) {
         setAnalysis(JSON.parse(maybeInStoreAnalysis));
+        setTimeout(() => {
+          setScale(100);
+        }, 300);
       }
     }
   }, [name, setAnalysis]);
 
   if (!analysis) {
-    return (
-      <Layout>
-        Loading...
-      </Layout>
-    )
+    return null;
   }
 
   return (
     <Layout>
-      <div className="flex justify-center items-center divide-x ">
+      <div
+        className={`flex justify-center items-center divide-x transform transition-all duration-150 ease-out scale-${scale}`}
+        >
+        <Head>
+          <title>{(name as string).toUpperCase()} scan</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
         {/* title */}
         <div className="flex flex-col text-gray-200 px-6">
           <h2 className="text-4xl font-bold">{name}</h2>

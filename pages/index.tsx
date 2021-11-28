@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head'
 import { useEffect, useState } from 'react'
 
 import Layout from '../components/Layout';
@@ -57,6 +58,10 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <div className="p-10 flex flex-col items-center">
+      <Head>
+        <title>Scanner for node packages.</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
         <Title/>
         <div className="flex items-center">
           <input
