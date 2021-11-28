@@ -13,6 +13,7 @@ import { getKey } from '../utils/ScannerStorage';
  * - create ScannerStorage
  * - i18n
  * - add types into API
+ * - add prettier
  */
 
 const Home: NextPage = () => {

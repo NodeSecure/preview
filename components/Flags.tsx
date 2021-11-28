@@ -2,7 +2,8 @@ interface FlagProp {
   type: string
 }
 
-// TODO: enrich it
+// TODO: move that to the backend and use
+// https://github.com/NodeSecure/flags/blob/main/src/manifest.js
 const flagMap = {
   "hasIndirectDependencies": "🌲 - Indirect dependencies",
   "hasOutdatedDependency": "⛔️ - Outdates dependencies",
