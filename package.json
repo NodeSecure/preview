@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier "
+    "format": "prettier ./components ./pages ./utils --write"
   },
   "dependencies": {
     "@nodesecure/flags": "^2.2.0",
