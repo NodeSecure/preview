@@ -19,8 +19,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        run: npm i
-        run: npx playwright install-deps
-        run: npx playwright install-deps chromium
+      - run: npm i
+      - run: npx playwright install-deps
+      - run: npx playwright install-deps chromium
       - name: Run tests
         run: npm run test:e2e
