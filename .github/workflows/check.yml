@@ -18,9 +18,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
-      - run: npm i
-      - run: npx playwright install-deps
-      - run: npx playwright install-deps chromium
+      - name: Install Node.js deps
+        run: npm i
+      - name: Install playwright
+        run: |
+          npx playwright install-deps
+          npx playwright install-deps chromium
       - name: Run tests
         run: npm run test:e2e
