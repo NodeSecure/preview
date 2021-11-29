@@ -7,7 +7,7 @@ interface FlagProp {
 const flagMap = {
   hasIndirectDependencies: "🌲 - Indirect dependencies",
   hasOutdatedDependency: "⛔️ - Outdates dependencies",
-  hasMissingOrUnusedDependency: "👀 - Missing or updated dependencies",
+  hasMissingOrUnusedDependency: "👀 - Missing or unused dependencies",
 };
 
 function Flags({ type }: FlagProp) {
