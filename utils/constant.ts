@@ -1,1 +1,1 @@
-export const kDefaultStorePrefix = 'scanner';
+export const kDefaultStorePrefix = "scanner";
