@@ -22,6 +22,7 @@ jobs:
         run: npm i
       - name: Install playwright
         run: |
+          npx playwright install
           npx playwright install-deps
           npx playwright install-deps chromium
       - name: Run tests
