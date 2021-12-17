@@ -19,35 +19,11 @@ export default async function handler(
   const { name } = req.query;
 
   if (name) {
-    const { id, dependencies } = await from(name as string, {
+    const payload = await from(name as string, {
       vulnerabilityStrategy: "npm",
     });
-
-    // FIXME: extract into a separate method
-    const pkg = dependencies[name as string];
-    const lastVersion = pkg.metadata.lastVersion;
-    const flags = pkg[lastVersion].flags;
-    const size = pkg[lastVersion].size;
-    const dependencyCount = pkg.metadata.dependencyCount;
-
-    const payload = {
-      version: lastVersion,
-      // @ts-expect-error
-      flags: flags.reduce((acc: Array<[string, string]>, flag: string) => {
-        const flagObject = flagMap[flag];
-
-        if (flagObject) {
-          acc.push([flagObject.emoji, flagObject.tooltipDescription]);
-        }
-
-        return acc;
-      }, []),
-      name: name as string,
-      id,
-      dependencyCount,
-      size,
-    };
-    res.status(200).json(payload);
+    const formattedAnalysis = formatPayload(payload, name as string);
+    res.status(200).json(formattedAnalysis);
   } else {
     res.status(404).json({ error: "Impossible to scan this package!" });
   }
@@ -61,3 +37,30 @@ const flagMap = Object.values(getManifest()).reduce((acc, curr) => {
   acc[curr.title] = curr;
   return acc;
 }, {} as Record<string, FlagObject>);
+
+function formatPayload(payload: Scanner.Payload, pkgName: string) {
+  const id = payload.id;
+  const pkg = payload.dependencies[pkgName as string];
+  const lastVersion = pkg.metadata.lastVersion;
+  const flags = pkg[lastVersion].flags;
+  const size = pkg[lastVersion].size;
+  const dependencyCount = pkg.metadata.dependencyCount;
+
+  return {
+    version: lastVersion,
+    // @ts-expect-error - Wait for @nodesecure/flags fix
+    flags: flags.reduce((acc: Array<[string, string]>, flag: string) => {
+      const flagObject = flagMap[flag];
+
+      if (flagObject) {
+        acc.push([flagObject.emoji, flagObject.tooltipDescription]);
+      }
+
+      return acc;
+    }, []),
+    name: pkgName,
+    id,
+    dependencyCount,
+    size,
+  };
+}
