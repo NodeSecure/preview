@@ -34,7 +34,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <div
-        className={`flex justify-center items-center divide-x transform transition-all duration-150 ease-out scale-${scale}`}
+        className={`flex flex-col md:flex-row justify-center items-center md:divide-x transform transition-all duration-150 ease-out scale-${scale}`}
       >
         <Head>
           <title>{(name as string).toUpperCase()} scan</title>
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
           />
         </Head>
         {/* title */}
-        <div className="flex flex-col text-gray-200 px-6">
+        <div className="flex flex-col text-gray-200 px-6 mb-8 md:mb-0">
           <h2 className="text-4xl font-bold">{name}</h2>
           <h3 className="font-light">{analysis.version}</h3>
         </div>
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
           <h3 className="px-10 text-2xl font-bold text-gray-200 mb-6">
             Numbers:
           </h3>
-          <div className="px-10 flex mb-6">
+          <div className="px-10 flex flex-col gap-4 md:flex-row mb-6">
             <Box label="Size" value={analysis.size / 1000 + " ko"} />
             <Box label="Dependencies" value={analysis.dependencyCount} />
           </div>

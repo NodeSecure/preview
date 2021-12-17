@@ -1,5 +1,6 @@
 {
-  "name": "np-scan",
+  "name": "@nodesecure/preview",
+  "description": "A preview of what NodeSecure could give you (in the browser)",
   "private": true,
   "scripts": {
     "dev": "next dev",
