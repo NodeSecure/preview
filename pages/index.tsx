@@ -9,7 +9,6 @@ import { getKey } from "../utils/ScannerStorage";
 
 /**
  * TODO: road to the V1
- * - add testing framework
  * - split component and add tests
  * - create ScannerStorage
  * - i18n
@@ -68,6 +67,7 @@ const Home: NextPage = () => {
         <Title />
         <div className="flex items-center">
           <input
+            id="search"
             value={pkgName}
             onChange={({ target: { value } }) => {
               setPkgName(value);
