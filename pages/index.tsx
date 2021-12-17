@@ -65,14 +65,14 @@ const Home: NextPage = () => {
           />
         </Head>
         <Title />
-        <div className="flex items-center">
+        <div className="flex items-center flex-col gap-6 md:gap-0 md:flex-row">
           <input
             id="search"
             value={pkgName}
             onChange={({ target: { value } }) => {
               setPkgName(value);
             }}
-            className="md:h-14 px-8 py-2 mr-2 color-blue-200 rounded shadow-lg border border-gray-300 font-thin text-2xl text-center hover:border-purple-300"
+            className="md:h-14 px-8 py-2 md:mr-2 color-blue-200 rounded shadow-lg border border-gray-300 font-thin text-xl md:text-2xl text-center hover:border-purple-300"
             placeholder="type a package name..."
           />
           {isLoading ? (
@@ -84,7 +84,7 @@ const Home: NextPage = () => {
             <button
               // disabled={pkgName.length < 1}
               onClick={handleScan}
-              className="px-8 py-2 md:h-14 bg-gradient-to-r from-purple-600 to-purple-500 rounded shadow-lg text-purple-100"
+              className="px-8 py-2 w-full md:h-14 bg-gradient-to-r from-purple-600 to-purple-500 rounded shadow-lg text-purple-100 text-xl md:text-2xl"
             >
               Scan!
             </button>
