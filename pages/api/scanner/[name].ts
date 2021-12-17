@@ -42,13 +42,11 @@ function formatPayload(payload: Scanner.Payload, pkgName: string) {
   const id = payload.id;
   const pkg = payload.dependencies[pkgName as string];
   const lastVersion = pkg.metadata.lastVersion;
-  const flags = pkg[lastVersion].flags;
-  const size = pkg[lastVersion].size;
+  const { flags, size } = pkg.versions[lastVersion];
   const dependencyCount = pkg.metadata.dependencyCount;
 
   return {
     version: lastVersion,
-    // @ts-expect-error - Wait for @nodesecure/flags fix
     flags: flags.reduce((acc: Array<[string, string]>, flag: string) => {
       const flagObject = flagMap[flag];
 
