@@ -11,7 +11,7 @@ test("it should display a search bar", async ({ page }) => {
 
   const content = await page.textContent("h1");
 
-  expect(content).toBe("NodeSecure - Preview");
+  expect(content).toBe("🕸 Preview");
 });
 
 test("user should type a package name in input", async ({ page }) => {
