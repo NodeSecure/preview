@@ -1,9 +1,8 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-// import type { Flags } from "@nodesecure/flags";
 
+import { getManifest, FlagObject } from "@nodesecure/flags";
 import { loadRegistryURLFromLocalSystem } from "@nodesecure/npm-registry-sdk";
-import { from } from "@nodesecure/scanner";
+import { from, Scanner } from "@nodesecure/scanner";
 
 loadRegistryURLFromLocalSystem();
 
@@ -33,7 +32,16 @@ export default async function handler(
 
     const payload = {
       version: lastVersion,
-      flags,
+      // @ts-expect-error
+      flags: flags.reduce((acc: Array<[string, string]>, flag: string) => {
+        const flagObject = flagMap[flag];
+
+        if (flagObject) {
+          acc.push([flagObject.emoji, flagObject.tooltipDescription]);
+        }
+
+        return acc;
+      }, []),
       name: name as string,
       id,
       dependencyCount,
@@ -44,3 +52,12 @@ export default async function handler(
     res.status(404).json({ error: "Impossible to scan this package!" });
   }
 }
+
+/**
+ * HELPERS
+ */
+
+const flagMap = Object.values(getManifest()).reduce((acc, curr) => {
+  acc[curr.title] = curr;
+  return acc;
+}, {} as Record<string, FlagObject>);

@@ -23,9 +23,11 @@ const Home: NextPage = () => {
         setTimeout(() => {
           setScale(100);
         }, 300);
+      } else {
+        router.push("/");
       }
     }
-  }, [name, setAnalysis]);
+  }, [name, setAnalysis, router]);
 
   if (!analysis) {
     return null;
@@ -59,14 +61,7 @@ const Home: NextPage = () => {
             <Box label="Dependencies" value={analysis.dependencyCount} />
           </div>
           {/* flags */}
-          <h3 className="px-10 text-2xl font-bold text-gray-200 mb-6">
-            Flags:
-          </h3>
-          <div className="text-gray-200 px-10">
-            {analysis.flags.map((flag: string) => (
-              <Flags key={flag} type={flag} />
-            ))}
-          </div>
+          <Flags flags={analysis.flags} />
         </div>
       </div>
     </Layout>
