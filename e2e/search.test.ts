@@ -33,6 +33,19 @@ test("user could search for a package and see result", async ({ page }) => {
   expect(await page.textContent("h2")).toBe(pkgName);
 });
 
+test("user could go back to the search view from the scan view", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const pkgName = "mutexify";
+  searchFor(pkgName, page);
+
+  await page.click("button");
+
+  const content = await page.textContent("h1");
+  expect(content).toBe("🕸 Preview");
+});
+
 /**
  * HELPERS
  */

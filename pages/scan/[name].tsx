@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import Flags from "../../components/Flags";
 import Box from "../../components/Box";
+import BackIcon from "../../components/Back";
 import { getKey } from "../../utils/ScannerStorage";
 
 const Home: NextPage = () => {
@@ -46,9 +47,14 @@ const Home: NextPage = () => {
           />
         </Head>
         {/* title */}
-        <div className="flex flex-col text-gray-200 px-6 mb-8 md:mb-0">
-          <h2 className="text-4xl font-bold">{name}</h2>
-          <h3 className="font-light">{analysis.version}</h3>
+        <div className="text-gray-200 md:px-6 mb-8 md:mb-0">
+          <div className="flex md:flex-col justify-between gap-8">
+            <BackIcon onClick={() => router.back()} />
+            <div className="grow">
+              <h2 className="text-4xl font-bold ">{name}</h2>
+              <h3 className="font-light">{analysis.version}</h3>
+            </div>
+          </div>
         </div>
         {/* content */}
         <div>
