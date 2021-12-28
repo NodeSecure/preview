@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 import Layout from "../components/Layout";
 import Title from "../components/Title";
-import Footer from "../components/Footer";
 import { getKey } from "../utils/ScannerStorage";
 
 /**
@@ -91,7 +90,6 @@ const Home: NextPage = () => {
             </button>
           )}
         </div>
-        <Footer />
       </div>
     </Layout>
   );
