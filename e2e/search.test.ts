@@ -28,7 +28,7 @@ test("user could search for a package and see result", async ({ page }) => {
   await page.goto("/");
 
   const pkgName = "mutexify";
-  searchFor(pkgName, page);
+  await searchFor(pkgName, page);
 
   expect(await page.textContent("h2")).toBe(pkgName);
 });
@@ -37,13 +37,27 @@ test("user could go back to the search view from the scan view", async ({
   page,
 }) => {
   await page.goto("/");
-  const pkgName = "mutexify";
-  searchFor(pkgName, page);
+  await searchFor("mutexify", page);
 
   await page.click("button");
 
   const content = await page.textContent("h1");
   expect(content).toBe("🕸 Preview");
+});
+
+test("user could visit nodesecure repo from search view", async ({ page }) => {
+  await page.goto("/");
+
+  const content = await page.textContent("a");
+  expect(content).toBe("Try it now!");
+});
+
+test("user could visit nodesecure repo from scan view", async ({ page }) => {
+  await page.goto("/");
+  await searchFor("mutexify", page);
+
+  const content = await page.textContent("a");
+  expect(content).toBe("Try it now!");
 });
 
 /**
