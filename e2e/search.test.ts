@@ -45,6 +45,21 @@ test("user could go back to the search view from the scan view", async ({
   expect(content).toBe("🕸 Preview");
 });
 
+test("user could visit nodesecure repo from search view", async ({ page }) => {
+  await page.goto("/");
+
+  const content = await page.textContent("a");
+  expect(content).toBe("Try it now!");
+});
+
+test("user could visit nodesecure repo from scan view", async ({ page }) => {
+  await page.goto("/");
+  await searchFor("mutexify", page);
+
+  const content = await page.textContent("a");
+  expect(content).toBe("Try it now!");
+});
+
 /**
  * HELPERS
  */

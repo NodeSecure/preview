@@ -18,7 +18,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Link to the organization
+          Try it now!
         </a>
       </p>
     </footer>
