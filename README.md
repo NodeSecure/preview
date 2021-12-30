@@ -32,6 +32,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Run e2e test:
 
+- First, install playwright.
+
+```bash
+$ npx playwright install
+```
+
+- Then, run the tests ^^
+
 ```bash
 $ npm run test:e2e
 ```
