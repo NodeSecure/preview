@@ -60,6 +60,15 @@ test("user could visit nodesecure repo from scan view", async ({ page }) => {
   expect(content).toBe("Try it now!");
 });
 
+test("user could search for a package with organization namespace and see result", async ({ page }) => {
+  await page.goto("/");
+
+  const pkgName = "@nodesecure/scanner";
+  await searchFor(pkgName, page);
+
+  expect(await page.textContent("h2")).toBe(pkgName);
+});
+
 /**
  * HELPERS
  */
