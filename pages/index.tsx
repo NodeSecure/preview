@@ -50,7 +50,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     if (scanPayload) {
-      router.push(`scan/${pkgName}`);
+      router.push(`scan/${pkgName.replace("/", "%2F")}`);
     }
   }, [scanPayload, router, pkgName]);
 
