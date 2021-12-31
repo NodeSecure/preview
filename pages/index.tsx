@@ -31,7 +31,7 @@ const Home: NextPage = () => {
     if (maybeCached) {
       analysis = JSON.parse(maybeCached);
     } else {
-      const res = await fetch(`/api/scanner/${pkgName}`);
+      const res = await fetch(`/api/scanner/${pkgName.replace("/", "%2F")}`);
 
       if (res.ok) {
         analysis = await res.json();
