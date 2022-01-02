@@ -35,6 +35,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "viterb-c",
+      "name": "Charles Viterbo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11444888?v=4",
+      "profile": "https://github.com/viterb-c",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

@@ -47,7 +47,7 @@ $ npm run test:e2e
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -60,6 +60,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://tonygo.dev"><img src="https://avatars.githubusercontent.com/u/22824417?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tony Gorez</b></sub></a><br /><a href="https://github.com/NodeSecure/preview/commits?author=tony-go" title="Code">💻</a> <a href="https://github.com/NodeSecure/preview/commits?author=tony-go" title="Documentation">📖</a> <a href="https://github.com/NodeSecure/preview/pulls?q=is%3Apr+reviewed-by%3Atony-go" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/NodeSecure/preview/issues?q=author%3Atony-go" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/thomas-gentilhomme/"><img src="https://avatars.githubusercontent.com/u/4438263?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gentilhomme</b></sub></a><br /><a href="https://github.com/NodeSecure/preview/pulls?q=is%3Apr+reviewed-by%3Afraxken" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/NodeSecure/preview/issues?q=author%3Afraxken" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/MehdiHan"><img src="https://avatars.githubusercontent.com/u/53506859?v=4?s=100" width="100px;" alt=""/><br /><sub><b>im_codebreaker</b></sub></a><br /><a href="https://github.com/NodeSecure/preview/commits?author=MehdiHan" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/viterb-c"><img src="https://avatars.githubusercontent.com/u/11444888?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Charles Viterbo</b></sub></a><br /><a href="https://github.com/NodeSecure/preview/commits?author=viterb-c" title="Code">💻</a> <a href="https://github.com/NodeSecure/preview/issues?q=author%3Aviterb-c" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
