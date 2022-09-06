@@ -1,4 +1,4 @@
-import { FlagObject } from "@nodesecure/flags";
+import { FlagObject } from "@nodesecure/flags/web";
 
 type FlagItem = [FlagObject["title"], FlagObject["tooltipDescription"]];
 

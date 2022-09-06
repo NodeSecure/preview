@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { getManifest, FlagObject } from "@nodesecure/flags";
+import { getManifest, FlagObject } from "@nodesecure/flags/web";
 import { loadRegistryURLFromLocalSystem } from "@nodesecure/npm-registry-sdk";
 import { from, Scanner } from "@nodesecure/scanner";
 
