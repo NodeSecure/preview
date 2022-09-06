@@ -1,5 +1,7 @@
 import { test, expect, Page } from "@playwright/test";
 
+test.describe.configure({ mode: 'parallel' });
+
 test("it should display a page title", async ({ page }) => {
   await page.goto("/");
 
