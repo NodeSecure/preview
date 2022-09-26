@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@nodesecure/flags": "^2.4.0",
-    "@nodesecure/npm-registry-sdk": "^1.4.0",
+    "@nodesecure/npm-registry-sdk": "^1.4.1",
     "@nodesecure/scanner": "^3.7.0",
     "next": "^12.2.5",
     "react": "17.0.2",
