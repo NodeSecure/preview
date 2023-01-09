@@ -2,8 +2,10 @@
 
 ![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/NodeSecure/preview/main/package.json&query=$.version&label=Version)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/NodeSecure/preview/commit-activity)
+[![OpenSSF
+Scorecard](https://api.securityscorecards.dev/projects/github.com/NodeSecure/preview/badge)](https://api.securityscorecards.dev/projects/github.com/NodeSecure/preview)
 [![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/NodeSecure/preview/blob/main/LICENSE)
-![build](https://img.shields.io/github/workflow/status/NodeSecure/preview/Check)
+![build](https://img.shields.io/github/actions/workflow/status/NodeSecure/preview/main.yml)
 
 <h2 align="center">Light NodeSecure in browser</h3>
 <p align="center">Find your package weaknesses!</p>
