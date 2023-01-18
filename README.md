@@ -1,11 +1,11 @@
 <h1 align="center">🕸 Preview</h1>
 
-![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/NodeSecure/preview/main/package.json&query=$.version&label=Version)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/NodeSecure/preview/commit-activity)
+![version](https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&url=https://raw.githubusercontent.com/NodeSecure/preview/master/package.json&query=$.version&label=Version)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/NodeSecure/preview/commit-activity)
 [![OpenSSF
-Scorecard](https://api.securityscorecards.dev/projects/github.com/NodeSecure/preview/badge)](https://api.securityscorecards.dev/projects/github.com/NodeSecure/preview)
-[![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/NodeSecure/preview/blob/main/LICENSE)
-![build](https://img.shields.io/github/actions/workflow/status/NodeSecure/preview/check.yml)
+Scorecard](https://api.securityscorecards.dev/projects/github.com/NodeSecure/preview/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/NodeSecure/preview)
+[![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=for-the-badge)](https://github.com/NodeSecure/preview/blob/main/LICENSE)
+![build](https://img.shields.io/github/actions/workflow/status/NodeSecure/preview/check.yml?style=for-the-badge)
 
 <h2 align="center">Light NodeSecure in browser</h3>
 <p align="center">Find your package weaknesses!</p>
