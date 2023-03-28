@@ -1,7 +1,7 @@
 <h1 align="center">🕸 Preview</h1>
 
 ![version](https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&url=https://raw.githubusercontent.com/NodeSecure/preview/master/package.json&query=$.version&label=Version)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/NodeSecure/preview/commit-activity)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/NodeSecure/preview/graphs/commit-activity)
 [![OpenSSF
 Scorecard](https://api.securityscorecards.dev/projects/github.com/NodeSecure/preview/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/NodeSecure/preview)
 [![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=for-the-badge)](https://github.com/NodeSecure/preview/blob/main/LICENSE)
