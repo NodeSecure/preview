@@ -1,6 +1,7 @@
 {
   "name": "@nodesecure/preview",
   "version": "1.0.0",
+  "license": "MIT",
   "description": "A preview of what NodeSecure could give you (in the browser)",
   "private": true,
   "scripts": {
