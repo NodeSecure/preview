@@ -4,7 +4,7 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/NodeSecure/preview/graphs/commit-activity)
 [![OpenSSF
 Scorecard](https://api.securityscorecards.dev/projects/github.com/NodeSecure/preview/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/NodeSecure/preview)
-[![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=for-the-badge)](https://github.com/NodeSecure/preview/blob/main/LICENSE)
+[![mit](https://img.shields.io/github/license/NodeSecure/preview.svg?style=for-the-badge)](https://github.com/NodeSecure/preview/blob/main/LICENSE)
 ![build](https://img.shields.io/github/actions/workflow/status/NodeSecure/preview/check.yml?style=for-the-badge)
 
 <h2 align="center">Light NodeSecure in browser</h3>
